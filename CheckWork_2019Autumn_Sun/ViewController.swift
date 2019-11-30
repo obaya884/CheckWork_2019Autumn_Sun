@@ -38,9 +38,13 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         // sceneViewにARオブジェクトを追加する処理
         // 最初はピカチュウ（配列の0番目）を表示させてる！
         let scene = SCNScene(named: "art.scnassets/\(pokemonNameArray[0]).scn")!
+        scene.rootNode.name = "pokemon"
         scene.rootNode.scale = SCNVector3(0.001, 0.001, 0.001)
         sceneView.scene.rootNode.addChildNode(scene.rootNode)
-        
+        let cameraPos = SCNVector3Make(0, 0, -0.2)
+        let position = sceneView.pointOfView!.convertPosition(cameraPos, to: nil)
+        sceneView.scene.rootNode.childNode(withName: "pokemon", recursively: true)?.position = position
+
     }
     
     // 右矢印のボタンを押した時の動作
