@@ -13,33 +13,45 @@ import AVFoundation
 
 class ViewController: UIViewController, ARSCNViewDelegate {
 
+    // ARオブジェクトを乗せるビュー
     @IBOutlet var sceneView: ARSCNView!
+
+    // ポケモンのARオブジェクトファイル名を格納した配列
+    let pokemonNameArray: [String] = ["pikachu", "Blastoise", "Bulbasaur", "Charmander", "Cubone", "pm0132_00", "Eevee", "Flareon", "Gardevoir", "Glaceon", "Groudon", "Growlithe", "Jigglypuff", "Jolteon", "Leafeon", "Lucario", "Lugia", "Magikarp", "Meowth", "Mew", "pmxxx1_00_fi", "Oddish", "Pichu", "Psyduck", "Reshiram", "Torchic", "Typhlosion", "Umbreon", "Vaporeon", "Vulpix", "pm0768_00_fi", "Zorua"]
+
+    // 配列用のインデックス
     var index: Int = 0
-    let pokemonNameArray: [String] = ["Blastoise", "Bulbasaur", "Charmander", "Cubone", "pm0132_00", "Eevee", "Flareon", "Gardevoir", "Glaceon", "Groudon", "Growlithe", "Jigglypuff", "Jolteon", "Leafeon", "Lucario", "Lugia", "Magikarp", "Meowth", "Mew", "pmxxx1_00_fi", "Oddish", "Pichu", "pikachu", "Psyduck", "Reshiram", "Torchic", "Typhlosion", "Umbreon", "Vaporeon", "Vulpix", "pm0768_00_fi", "Zorua"]
     
+    // BGM用の音楽プレイヤー
     var bgmPlayer: AVAudioPlayer!
     
+    // 最初に画面が表示される前のセッティング
     override func viewDidLoad() {
         super.viewDidLoad()
         sceneView.delegate = self
         
+        // BGMの再生（→教科書09.TechPod）
         let bgmPath = URL(fileURLWithPath: Bundle.main.path(forResource: "bgm", ofType: "mp3")!)
         bgmPlayer = try? AVAudioPlayer(contentsOf: bgmPath)
         bgmPlayer?.play()
         
-        let string = "pikachu"
-        // Create a new scene
-        let scene = SCNScene(named: "art.scnassets/\(string).scn")!
+        // sceneViewにARオブジェクトを追加する処理
+        // 最初はピカチュウ（配列の0番目）を表示させてる！
+        let scene = SCNScene(named: "art.scnassets/\(pokemonNameArray[0]).scn")!
         scene.rootNode.scale = SCNVector3(0.001, 0.001, 0.001)
         sceneView.scene.rootNode.addChildNode(scene.rootNode)
         
     }
     
+    // 右矢印のボタンを押した時の動作
     @IBAction func next() {
+        // 現在sceneViewに追加している（＝表示している）ARオブジェクトを取り除く
         sceneView.scene.rootNode.enumerateChildNodes{ (node, step) in
             node.removeFromParentNode()
         }
-        
+
+        // インデックスを利用して表示するポケモンを変更していく（教科書06.クラス p33~）
+        // 配列のインデックスを操作する
         if index != pokemonNameArray.count - 1 {
             index += 1
         }
@@ -47,17 +59,23 @@ class ViewController: UIViewController, ARSCNViewDelegate {
             index = 0
         }
         
+        // sceneViewにARオブジェクトを追加する処理（viewDidLoad()に同じ処理があるはず！）
+        // インデックスを利用して配列の値にアクセスしよう
         let scene = SCNScene(named: "art.scnassets/\(pokemonNameArray[index]).scn")!
         scene.rootNode.scale = SCNVector3(0.001, 0.001, 0.001)
         sceneView.scene.rootNode.addChildNode(scene.rootNode)
 
     }
-    
+
+    // 左矢印のボタンを押した時の動作
     @IBAction func back() {
+        // 現在sceneViewに追加している（＝表示している）ARオブジェクトを取り除く
         sceneView.scene.rootNode.enumerateChildNodes{ (node, step) in
             node.removeFromParentNode()
         }
         
+        // インデックスを利用して表示するポケモンを変更する（教科書06.クラス p33~）
+        // 配列のインデックスを操作する
         if index == 0 {
             index = pokemonNameArray.count - 1
         }
@@ -65,60 +83,38 @@ class ViewController: UIViewController, ARSCNViewDelegate {
             index -= 1
         }
         
+        // sceneViewにARオブジェクトを追加する処理（viewDidLoad()に同じ処理があるはず！）
+        // インデックスを利用して配列の値にアクセスしよう
         let scene = SCNScene(named: "art.scnassets/\(pokemonNameArray[index]).scn")!
         scene.rootNode.scale = SCNVector3(0.001, 0.001, 0.001)
         sceneView.scene.rootNode.addChildNode(scene.rootNode)
 
     }
     
+    // ポケモンボールボタンが押された時の処理（スナップショットを撮って保存する）
     @IBAction func saveSnapShot() {
+        // システム音からカメラのシャッター音を鳴らす
         AudioServicesPlaySystemSound(1108)
+        // sceneViewのスナップショットをimageに代入する
         let image: UIImage = sceneView.snapshot()
+        
+        // カメラロールにimageを保存する（→教科書08.TouchEvent p33~）
         UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
     }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
         
-        // Create a session configuration
-        let configuration = ARWorldTrackingConfiguration()
-
-        // Run the view's session
-        sceneView.session.run(configuration)
-    }
-    
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        
-        // Pause the view's session
         sceneView.session.pause()
         
+        // アプリ画面が消える前にBGMを止めておく
         bgmPlayer.stop()
     }
 
-    // MARK: - ARSCNViewDelegate
-    
-/*
-    // Override to create and configure nodes for anchors added to the view's session.
-    func renderer(_ renderer: SCNSceneRenderer, nodeFor anchor: ARAnchor) -> SCNNode? {
-        let node = SCNNode()
-     
-        return node
+    override func viewWillAppear(_ animated: Bool) {
+        // ARKit周りの処理（今回は気にしなくてよし）
+        super.viewWillAppear(animated)
+        let configuration = ARWorldTrackingConfiguration()
+        sceneView.session.run(configuration)
     }
-*/
-    
-    func session(_ session: ARSession, didFailWithError error: Error) {
-        // Present an error message to the user
-        
-    }
-    
-    func sessionWasInterrupted(_ session: ARSession) {
-        // Inform the user that the session has been interrupted, for example, by presenting an overlay
-        
-    }
-    
-    func sessionInterruptionEnded(_ session: ARSession) {
-        // Reset tracking and/or remove existing anchors if consistent tracking is required
-        
-    }
+
 }
