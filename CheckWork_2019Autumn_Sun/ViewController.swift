@@ -51,19 +51,10 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         }
 
         // インデックスを利用して表示するポケモンを変更していく（教科書06.クラス p33~）
-        // 配列のインデックスを操作する
-        if index != pokemonNameArray.count - 1 {
-            index += 1
-        }
-        else {
-            index = 0
-        }
+        // (1)配列のインデックスを操作する
         
         // sceneViewにARオブジェクトを追加する処理（viewDidLoad()に同じ処理があるはず！）
-        // インデックスを利用して配列の値にアクセスしよう
-        let scene = SCNScene(named: "art.scnassets/\(pokemonNameArray[index]).scn")!
-        scene.rootNode.scale = SCNVector3(0.001, 0.001, 0.001)
-        sceneView.scene.rootNode.addChildNode(scene.rootNode)
+        // (2)インデックスを利用して配列の値にアクセスしよう
 
     }
 
@@ -75,19 +66,10 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         }
         
         // インデックスを利用して表示するポケモンを変更する（教科書06.クラス p33~）
-        // 配列のインデックスを操作する
-        if index == 0 {
-            index = pokemonNameArray.count - 1
-        }
-        else {
-            index -= 1
-        }
+        // (1)配列のインデックスを操作する
         
         // sceneViewにARオブジェクトを追加する処理（viewDidLoad()に同じ処理があるはず！）
-        // インデックスを利用して配列の値にアクセスしよう
-        let scene = SCNScene(named: "art.scnassets/\(pokemonNameArray[index]).scn")!
-        scene.rootNode.scale = SCNVector3(0.001, 0.001, 0.001)
-        sceneView.scene.rootNode.addChildNode(scene.rootNode)
+        // (2)インデックスを利用して配列の値にアクセスしよう
 
     }
     
@@ -98,8 +80,8 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         // sceneViewのスナップショットをimageに代入する
         let image: UIImage = sceneView.snapshot()
         
-        // カメラロールにimageを保存する（→教科書08.TouchEvent p33~）
-        UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
+        // (1)カメラロールにimageを保存する（→教科書08.TouchEvent p33~）
+        
     }
         
     override func viewWillDisappear(_ animated: Bool) {

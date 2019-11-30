@@ -34,9 +34,6 @@
                                         <real key="value" value="30"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="back" destination="BV1-FR-VrT" eventType="touchUpInside" id="wzs-5I-TNW"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleAspectFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lhq-37-eux" customClass="IBDesignableButton" customModule="CheckWork_2019Autumn_Sun" customModuleProvider="target">
                                 <rect key="frame" x="299" y="587" width="60" height="60"/>
@@ -53,17 +50,11 @@
                                         <real key="value" value="30"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="next" destination="BV1-FR-VrT" eventType="touchUpInside" id="fdo-qk-0MW"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="spZ-gp-WzT">
                                 <rect key="frame" x="147" y="577" width="80" height="80"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="monster_ball.png"/>
-                                <connections>
-                                    <action selector="saveSnapShot" destination="BV1-FR-VrT" eventType="touchUpInside" id="Ad3-HE-kLk"/>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.8901960784313725" green="0.12549019607843137" blue="0.11372549019607843" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
