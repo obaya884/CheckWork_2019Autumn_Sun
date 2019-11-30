@@ -512,6 +512,7 @@
 		661B03BF2392C4AA001C3C2A /* IBDesignableButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 661B03BE2392C4AA001C3C2A /* IBDesignableButton.swift */; };
 		661B03C32392C6C2001C3C2A /* monster_ball.png in Resources */ = {isa = PBXBuildFile; fileRef = 661B03C22392C6C2001C3C2A /* monster_ball.png */; };
 		661B03C72392CF16001C3C2A /* bgm.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 661B03C62392CF16001C3C2A /* bgm.mp3 */; };
+		661B03CB2392DB9B001C3C2A /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 661B03CA2392DB9B001C3C2A /* icon.png */; };
 		666A60742392A1FE00E87AD2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666A60732392A1FE00E87AD2 /* AppDelegate.swift */; };
 		666A60762392A1FE00E87AD2 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 666A60752392A1FE00E87AD2 /* art.scnassets */; };
 		666A60782392A1FE00E87AD2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666A60772392A1FE00E87AD2 /* ViewController.swift */; };
@@ -867,10 +868,11 @@
 		661B01822392B6B8001C3C2A /* pm0104_00_BodyNor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pm0104_00_BodyNor.png; sourceTree = "<group>"; };
 		661B01832392B6B8001C3C2A /* pm0104_00_Body2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pm0104_00_Body2.png; sourceTree = "<group>"; };
 		661B01842392B6B8001C3C2A /* Cubone.dae */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml.dae; path = Cubone.dae; sourceTree = "<group>"; };
-		661B037E2392BC40001C3C2A /* Jolteon.scn */ = {isa = PBXFileReference; lastKnownFileType = file; name = Jolteon.scn; path = CheckWork_2019Autumn_Sun/art.scnassets/Jolteon.scn; sourceTree = SOURCE_ROOT; };
+		661B037E2392BC40001C3C2A /* Jolteon.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; name = Jolteon.scn; path = CheckWork_2019Autumn_Sun/art.scnassets/Jolteon.scn; sourceTree = SOURCE_ROOT; };
 		661B03BE2392C4AA001C3C2A /* IBDesignableButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IBDesignableButton.swift; sourceTree = "<group>"; };
 		661B03C22392C6C2001C3C2A /* monster_ball.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = monster_ball.png; sourceTree = "<group>"; };
 		661B03C62392CF16001C3C2A /* bgm.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = bgm.mp3; path = ../../bgm.mp3; sourceTree = "<group>"; };
+		661B03CA2392DB9B001C3C2A /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		661BFF522392B6B7001C3C2A /* pm0133_00_BodyNor_Alpha.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pm0133_00_BodyNor_Alpha.png; sourceTree = "<group>"; };
 		661BFF532392B6B7001C3C2A /* pm0133_00_MouthNor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pm0133_00_MouthNor.png; sourceTree = "<group>"; };
 		661BFF542392B6B7001C3C2A /* pm0133_00_Eye1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pm0133_00_Eye1.png; sourceTree = "<group>"; };
@@ -1026,7 +1028,7 @@
 		661BFFFC2392B6B7001C3C2A /* pm0039_00_MouthNor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pm0039_00_MouthNor.png; sourceTree = "<group>"; };
 		661BFFFD2392B6B7001C3C2A /* pm0039_00_Iris1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pm0039_00_Iris1.png; sourceTree = "<group>"; };
 		661BFFFE2392B6B7001C3C2A /* pm0039_00_Eye1_Merged.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pm0039_00_Eye1_Merged.png; sourceTree = "<group>"; };
-		666A60702392A1FE00E87AD2 /* CheckWork_2019Autumn_Sun.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CheckWork_2019Autumn_Sun.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		666A60702392A1FE00E87AD2 /* ARポケモン図鑑.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ARポケモン図鑑.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		666A60732392A1FE00E87AD2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		666A60752392A1FE00E87AD2 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
 		666A60772392A1FE00E87AD2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -2079,7 +2081,7 @@
 		666A60712392A1FE00E87AD2 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				666A60702392A1FE00E87AD2 /* CheckWork_2019Autumn_Sun.app */,
+				666A60702392A1FE00E87AD2 /* ARポケモン図鑑.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -2087,6 +2089,7 @@
 		666A60722392A1FE00E87AD2 /* CheckWork_2019Autumn_Sun */ = {
 			isa = PBXGroup;
 			children = (
+				661B03CA2392DB9B001C3C2A /* icon.png */,
 				661B03C62392CF16001C3C2A /* bgm.mp3 */,
 				661B03C22392C6C2001C3C2A /* monster_ball.png */,
 				661B03BE2392C4AA001C3C2A /* IBDesignableButton.swift */,
@@ -2119,7 +2122,7 @@
 			);
 			name = CheckWork_2019Autumn_Sun;
 			productName = CheckWork_2019Autumn_Sun;
-			productReference = 666A60702392A1FE00E87AD2 /* CheckWork_2019Autumn_Sun.app */;
+			productReference = 666A60702392A1FE00E87AD2 /* ARポケモン図鑑.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -2579,6 +2582,7 @@
 				661B02F22392B6B8001C3C2A /* pm0383_51_BodyBEnv2.png in Resources */,
 				661B01C62392B6B8001C3C2A /* pm0249_00_BodyNor.png in Resources */,
 				661B01D32392B6B8001C3C2A /* pm0282_51_BodyANor.png in Resources */,
+				661B03CB2392DB9B001C3C2A /* icon.png in Resources */,
 				661B02A82392B6B8001C3C2A /* pm0132_00_MouthNor.png in Resources */,
 				661B02462392B6B8001C3C2A /* pm0134_00_EyeNor.png in Resources */,
 				661B02322392B6B8001C3C2A /* pm0025_00_BodyA1Id.png in Resources */,
@@ -2833,7 +2837,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "app.takumi.obayashi.CheckWork-2019Autumn-Sun";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "ARポケモン図鑑";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -2852,7 +2856,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "app.takumi.obayashi.CheckWork-2019Autumn-Sun";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "ARポケモン図鑑";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
